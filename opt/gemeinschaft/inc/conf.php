@@ -127,7 +127,6 @@ function gs_get_conf( $key, $default=null )
 	return @defined($key) ? constant($key) : $default;
 }
 
-
 $conf = '/etc/gemeinschaft/gemeinschaft.php';
 if (! file_exists( $conf )) {
 	trigger_error( "Config file \"$conf\" not found!\n", E_USER_ERROR );
@@ -139,7 +138,6 @@ if (! file_exists( $conf )) {
 		exit(1);
 	}
 }
-
 
 function _gscnf( $param, $default=null )
 {
@@ -245,6 +243,7 @@ _gscnf( 'PROV_MODELS_ENABLED_SIEMENS'     , '*'          );  # / 'os20,os40,os60
 _gscnf( 'PROV_MODELS_ENABLED_AASTRA'      , '*'          );  # / '51i,53i,55i,57i'
 _gscnf( 'PROV_MODELS_ENABLED_GRANDSTREAM' , '*'          );  # / 'gxp2000,gxp2020'...
 _gscnf( 'PROV_MODELS_ENABLED_TIPTEL'      , '*'          );  # / 'ip280,ip284,ip286'
+_gscnf( 'PROV_MODELS_ENABLED_YEALINK'     , '*'          );  # / 'yealink-sip-t46g,yealink-sip-t48g'
 _gscnf( 'PROV_MODELS_ENABLED_POLYCOM'     , '*'          );  # / 'spip-550,spip-670', ...
 
 _gscnf( 'SNOM_PROV_ENABLED'         , false              );
@@ -324,6 +323,16 @@ _gscnf( 'TIPTEL_PROV_FW_DEFAULT_IP280' , null            );
 _gscnf( 'TIPTEL_PROV_FW_DEFAULT_IP284' , null            );
 _gscnf( 'TIPTEL_PROV_FW_DEFAULT_IP286' , null            );
 _gscnf( 'TIPTEL_PROV_KEY_BLACKLIST' , ''                 );
+
+_gscnf( 'YEALINK_PROV_ENABLED'       , false              );
+_gscnf( 'YEALINK_PROV_HTTP_PASS'     , ''                 );
+_gscnf( 'YEALINK_PROV_NTP'           , gs_get_conf('GS_PROV_HOST','') );
+_gscnf( 'YEALINK_PROV_FW_UPDATE'     , false              );
+_gscnf( 'YEALINK_PROV_FW_DEFAULT_IP28XS', null            );
+_gscnf( 'YEALINK_PROV_FW_DEFAULT_IP280' , null            );
+_gscnf( 'YEALINK_PROV_FW_DEFAULT_IP284' , null            );
+_gscnf( 'YEALINK_PROV_FW_DEFAULT_IP286' , null            );
+_gscnf( 'YEALINK_PROV_KEY_BLACKLIST' , ''                 );
 
 _gscnf( 'CANONIZE_OUTBOUND'         , true               );
 _gscnf( 'CANONIZE_INTL_PREFIX'      , '00'               );
