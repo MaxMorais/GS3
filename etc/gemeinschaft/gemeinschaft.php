@@ -531,6 +531,10 @@ $YEALINK_PROV_FW_UPDATE = false;  # allow firmware updates?
   # 'f20' Private Hold
   # 'f27' XML Browser
 
+$YEALINK_PROV_FW_DEFAULT_SIP_T46G = '';
+$YEALINK_PROV_FW_DEFAULT_SIP_T48G = '';
+
+
 
 //-----------------------[ Polycom ]----------------------//
 
